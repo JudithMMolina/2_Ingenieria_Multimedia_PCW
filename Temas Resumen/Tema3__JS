@@ -1,0 +1,326 @@
+
+***INDICE***
+
+	VARIABLES: 								23	
+	EXPRESIONES Y OPERADORES: 				34
+	VECTORES Y OBJETOS: 					89
+	MAP y SET: 								121
+	ENTEROS BASE: 							146
+	FLOATING-POINT: 						157
+	JSON: 									167
+	STRING LITERALES: 						177
+	OBJETOS: 								190
+	MATH: 									231
+	FECHAS: 								272
+	STRINGS: 								280
+	CONTROL DE FLUJO: 						299
+
+
+
+
+------------------------------------------------------------------------------------------
+
+-- VARIABLES
+
+	--> var 		: Permite declarar variables locales y globales. Tiene ámbito de función.
+	--> let 		: Permite declarar variables locales que solo existiran dentro del bloque de código en el que se declaró
+	--> const 		: Permite declarar constantes. Estas tienen ámbito de bloque
+	--> Sin asignar : El valor es undefined o falso
+
+
+
+------------------------------------------------------------------------------------------
+
+-- EXPRESIONES Y OPERADORES
+
+	Aritmeticos
+
+		x = y 		: 	x = y 					Asignación
+		x += y 		: 	x = x + y			Suma 	
+		x -= y  	: 	x = x - y 				Resta
+		x *= y 		: 	x = x * y 			Multiplicacion
+		x /= y 		: 	x = x * y 			División
+		x %= y 		: 	x = x % y 			Resto 
+		x **= y 	: 	x = x ** y 				Exponencial
+		
+	Bit a bit	
+		x <<= y 	: 	x = x << y 				Bit hacia la izquierda
+		x >>= y 	: 	x = x >> y 				Bit hacia la derecha 
+		x >>>= y 	: 	x = x >>> y 			Bit hacia la derecha sin signo 
+		~ x 									Invierte los bits del operando
+		x &= y 			: 	x = y & y 			AND 
+		x ^= y 			: 	x = y ^ y  			XOR
+		x |= y 			: 	x = y | y 			OR
+		
+	Comparativos
+		x == y 									Iguales
+		x != y 									Diferentes
+		x === y 								Igules con mismo tipo 
+		x !== y 								Distintos y/o no tienen mismo tipo
+		x > y 									Mayor que 
+		x < y 									Menor que 
+		x >= y 									Mayor o igual que 
+		x <= y 									Menor o igual que
+
+	Incrementales
+		x++ o x-- 								Incremento de 1 o decremento de 1
+
+	Lógicos
+		exp1 && exp2 							Devuelve true si ambos son true 
+		exp1 || exp2 							Devuelve true si uno de ellos es true 
+		!expr 									Devuelve false si la expresión era true 
+
+	Concatenación
+	 	var nombre = 'Juan'
+	 	var apellidos = 'Garcia'
+	 	apellidos += ' Perez'
+
+	Condicional ternario
+		condicion ? valor1 : valor 2 			if(condicion){valor1}else{valor2}
+
+	Unarios
+		delete 									Borra cosas
+		typeof()								Devuelve el tipo del operando
+		void() 									Evalua lo que se le pasa y no devuelve resultado. No recarga 				
+
+
+-------------------------------------------------------------------------------------------------------------------
+
+-- VECTORES Y OBJETOS
+
+	var a = []					--> Creación de array unidimensional
+	var a = [[],[]] 			--> Creación de array bidimensional de dos filas
+	
+	a.push(x)					--> Poner el valor x en la última posición
+	a.pop() 					--> Devuelve y elminina del array el último elemento del mismo
+	a.shift() 					--> Devuelve y elimina del array el primer elemento del mismo
+	a.unshift(x) 				--> Añade uno o más elementos al inicio y devuelve la nueva longitud
+	a.length 					--> Longitud del array
+	
+	a.isArray(x)				--> Devuelve true si es un array 
+	a.of(e1,e2,e3...) 			--> Devuelve un array con los elementos pasados
+	a.concat(array1,array2...)	--> Devuelve una array concatenando arrays 
+	a.fill(valor, inicio, fin)	--> Devuelve el array rellenado con el valor desde el inicio al fin
+	a.includes(elemento, pos)	--> Devuelve true si encuentra el valor a partir de la pos pasada 
+	a.join(separador) 			--> Devuelve un string con todos los elementos concatenados por el separador
+	a.lastIndexOf(elemento, pos)--> Devuelve la posición del elemento encontrado último
+	a.reverse()					--> Pone el array al revés
+	a.sort() 					--> Ordena el array 	
+	a.toString() 				--> Devuelve un string formado por los elementos del array separados por ,
+
+	var nombre 		= [valor1, valor2, valor3]
+	var [,a,b]		= nombre						--> //a=valor2 b=valor3
+
+	var objeto = {clave1:valor1, clave2:valor2, clave3:valor3}
+	var {clave1:n, clave3:d} = objeto 				--> //clave1:valor1 clave3:valor3
+
+
+
+-------------------------------------------------------------------------------------------------------------------
+
+-- MAP Y SET
+
+	var a = new Map() 			--> Colección de par clave/valor en las que el valor de la clave no se puede repetir
+
+	a.size 						--> Número de pares clave/valor del objeto Map 
+	a.clear() 					--> Elimina todos los pares clave/valor 
+	a.delete(clave)
+	a.forEach()
+	a.get(clave) 				--> Devuelve el valor del par clave/valor con la clave indicada 
+	a.has(clave) 				--> Devuelve true si el objeto tiene un par clave/valor con la clave indicada
+	a.set(clave, valor) 		--> Añade el nuevo par o lo modifica si existe 
+
+
+	var a = new Set()			--> Colección de valores únicos de cualquier tipo 
+
+	a.size() 
+	a.add(valor) 
+	a.clear() 
+	a.delete(valor)
+	a.forEach() 
+	a.has(valor)
+
+
+-------------------------------------------------------------------------------------------------------------------
+
+-- ENTEROS BASE 	
+
+	Decimal 	--> 	Secuencia de dígitos (0-9). No debe empezar por 0.
+	Octal 		--> 	Secuancia de dígitos (0-7) comenzando con 0 o 0o 
+	Hexadecimal	--> 	Secuencia de dígitos (0-9) y letras a-f A-F comanzando con Ox 
+	Binario 	--> 	Secuencia de digitos (0-1) comenzando con 0b
+
+
+
+-------------------------------------------------------------------------------------------------------------------
+
+-- FLOATING-POINT 
+
+	Parte entera 		--> 	+34 o -45 
+	Parte decimal 		--> 	.452 
+	Exponente 			--> 	-3.1e+34 o 5e-45 		
+
+
+
+-------------------------------------------------------------------------------------------------------------------
+
+-- JSON 	
+
+	De JSON a variable JS para trabajar con ella 		--> eval('('+ texto + ')')
+														--> JSON.parse(texto)
+
+	De variable JS a JSON 								--> JSON.stringify(valor)
+
+
+-------------------------------------------------------------------------------------------------------------------
+
+-- STRINGS LITERALES
+
+	\n 			--> 	Salto de línea 	
+	\r 			--> 	Retorno de carro 	
+	\t 			--> 	Tabulardor 
+	\uXXXX 		--> 	Caracteres unicode expresados los digitos hexadecimales XXXX
+	\ 			--> 	Para imprimir caracteres especiales como comillas
+	` ` y ${} 	--> 	Para texto con variables
+
+
+
+-------------------------------------------------------------------------------------------------------------------
+
+-- OBJETOS
+
+	Lista de 0 o más propiedad:valor 		--> {} 
+	Nombre de propiedad 					--> ''
+	Acceder al valor de la propiedad 		--> . o [''] 
+	Longitud del objeto 					--> objeto.length
+
+	¿Es finito? 							--> isFinite(x)
+	¿No es un número? 						--> isNaN(x)
+	Devuelve un number equivalente a txt 	--> parseFloat(texto)
+	Transforma txt a numero 				--> parseInt(texto,base)
+
+
+	var persona = new Object() 				--> constructor de objetos
+		persona.nombre = 'Juan' 			--> Se le añade la propiedad nombre
+		persona.calcularEdad = function(){	--> Creación de la función para el objeto persona
+
+		} 
+
+	var persona = {							--> Otra forma de crear el objeto. La función también se puede crear como propiedad sin poner el :function
+		nombre: 'Juan'
+		apellido: 'Sin Miedo'
+		calcularEdad : function(){
+
+		}
+	}
+
+
+	Function(a1,a2...) 						--> Constructor de funciones 
+	Boolean(valor) 							--> Constructor de booleanos
+	Error(mensaje) 							--> Permite crear nuevos objetos de tipo error 
+
+		try {throw= new Error('Se ha producido un error')} 
+		catch (e){ console.log(e.name + ':' + e.message)}
+
+
+
+
+
+-------------------------------------------------------------------------------------------------------------------
+
+-- MATH 
+
+	.E 						--> Valor del número e 
+	.LN10 					--> Logaritmo natural de 10 
+	.LN2 					--> Logaritmo natural de 2 
+	.LOG10E 				--> Logaritmo en base 10 del número e 
+	.LN2E 					--> Logaritmo en base 2 del número e 
+	.PI 					--> Numero pi 
+	.SQRT1_2 				--> Valor de la raiz cuadrade de 1/2 
+	.SQRT2 					--> Valor de la raíz cuadrada de 2 
+
+	.abs(x) 				--> Valor absoluto 
+	.acos(x) 				--> Arcocoseno de x
+	.asin(x)				--> Arcoseno de x 
+	.atan(x) 				--> Arcotangente de x 
+	.cbrt(x) 				--> Raiz cubica de x 
+	.cos(x) 				--> Coseno de x 
+	.tan(x) 				--> Tangente de x
+	.exp(x) 				--> Devuelve e elevado a x
+	.pow(x,y) 				--> Devuelve el valor del numero x^y
+	.sqrt(x) 				--> Raiz cuadrada de x 
+
+	.ceil(x)				--> Devuelve el entero superior de x 
+	.floor(x)				--> Develve el entero inmediatamente anterior de x 
+	.round() 				--> Entero más cercano al valor
+	.trunc(x) 				--> Truncamiento
+	
+	.log(x) 				--> Logaritmo en base E de x 
+	.log10(x) 				--> Logaritmo en base 10 de x 
+	.log2(x) 				--> Logaritmo en base 2 de x 
+	.max([x[,y[,...]]]) 	--> Devuelve el maximo de los argumentos que se le pasan
+	.min([x[,y[,...]]]) 	--> Devuelve el minimode los argumentos que se le pasan
+
+
+	.random() 				--> Entre 0-1 
+	.hypot([x[,y[,...]])	--> Devuelve la raíz cuadrada de la suma de los cuadrados de los argumentos
+
+
+
+------------------------------------------------------------------------------------------
+
+-- FECHAS
+
+	Date(year: int, month: int, date?: int, hours?: int, minutes?: int, seconds?: int, ms?: int)
+	Date(AAAA-MM-DD T HH:mm:ss.ms+HH:mm)
+
+
+------------------------------------------------------------------------------------------
+
+--STRINGS
+
+	nombre.length 					--> Longitud de la cadena 
+	nombre.charAt(pos) 				--> Devuelve el carácter que se encuentra en la posición indicadsa
+	nombre.concat(palabra) 			--> Concatena 
+	nombre.includes(cadena,pos) 	--> Devuelve true si la cadena aparece 1 o más veces a partir de la pos 
+	nombre.indexOf(cadena, pos)		--> Devuelve la primera posición mayor o igual a pos en la que aparece la cadena. Sino -1
+	nombre.lastIndexOf(cadena, pos) --> Igual pero el último
+	nombre.localeCompare(cadena) 	--> Devuelve -1, 0 o 1 si el texto del objeto es anterior, igual o superior a la cadena
+	nombre.repeat(numero) 			--> Devuelve un string repetido tantas veces como se indique 
+	nombre.split(separador, limite) --> Devuelve un array de strings, resultado de separar el texto. Límite másimo de palabras separadas
+	nombre.substring(inicio, fin) 	--> Devuelve la subcadena de texto desde el inicio al fin en posiciones
+	objeto.toUpperCase() 			--> Transformar a mayusculas
+	objeto.toLowerCase()			--> Transformar a minusculas 
+
+
+
+------------------------------------------------------------------------------------------
+
+-- 	CONTROL DEL FLUJO DE EJECUCIÓN
+
+
+	CONTROL DE DECISION
+
+		switch (expresión) {
+			case label_1:
+				// statements_1
+				break;
+			default:
+				// statements_def
+				break;
+		}
+
+
+	BUCLE PARA OBJETOS ITERABLES (array, map, set, string...)
+
+		var v = [];
+
+		for(var e of v){
+
+		}
+
+
+	break 			--> Rompe el bucle y sale 
+	crontinue 		--> Permite romper una iteración en un bucle y pasar a la siguiente, sin salir de él
+
+

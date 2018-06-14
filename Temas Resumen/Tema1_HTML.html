@@ -1,0 +1,333 @@
+
+*** INDICE ***
+
+	Inicio: 													27
+	Metadatos extra:											40
+	Caracteres especiales:										52
+	Elementos (nav, header...):									67
+	Etiquetas de estructura, semánticos y de aspecto:			78
+	Formularios + atributos:									107
+	Input + atributos:											131
+	Imagenes:													180
+	Script:														189
+	Time:														199
+	Valor escalar en un rango:									210
+	Atributos:													220
+	Audio y video + atributos:									230
+	Imagenes adaptativas + atributos:							265
+	Emmet :														307
+
+
+
+
+
+
+---------------------------------------------------------------------------------------
+
+-- INICIO 
+
+	--> Recuerda que cada etiqueta es un hijo de un padre. Todo es un árbol, DOM
+	--> Recuerda cambiar el idioma a español: <html lang="es"> 
+	--> Que esté puesto el <meta charset = "utf-8">
+	--> Linkear CSS: <link rel="stylesheet" type="text/css" href="estilo.css"> 
+	--> Fontello: <link rel="stylesheet" type="text/css" href="Font/css/fontello.css">
+	--> Cambiar tipo de letra: <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans">
+	--> Linkear JS: <script src="archivo.js"></script>
+
+
+---------------------------------------------------------------------------------------
+
+-- METADATOS EXTRA 
+
+	--> Breve resumen del contenido de la página: <meta name="description" content="Texto resumen">
+	
+	--> Evitar que el navegador redimensione el contenido en móviles: <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	--> Evitar que el navegador recargue la página de la cache: <meta http-equiv="cache-control" content="no-cache">
+
+
+
+---------------------------------------------------------------------------------------
+
+-- CARACTERES ESPECIALES 
+
+	--> acentos (sustituir X): 		&Xacute;
+	--> ñ: 							&ntilde;
+	--> ü: 							&uuml;
+	--> ¿: 							&iquest;
+	--> ¡: 							&ixcl;
+	--> euro: 						&euro;
+	--> espacio: 					&nbsp;
+	--> copyright: 					&copy;
+	--> Ruptura de una palabra: 	<wbr> o &shy;
+
+
+---------------------------------------------------------------------------------------
+
+-- ELEMENTOS (nav, header...) 
+
+	--> Cabecera:				<header></header>
+	--> Menú de navegación: 	<nav></nav>
+	--> Pie de sección: 		<footer></footer>
+	--> Artículo: 				<article></article>
+	--> Sección:				<section></section>
+
+
+---------------------------------------------------------------------------------------
+
+-- ETIQUETAS DE ESTRUCTURA SEMANTICOS Y DE ASPECTO
+
+	--> Parrafo: 					<p></p>
+	--> Subrayar: 					<u></u>
+	--> Salto de linea: 			<br>
+	--> Línea:						<hr>
+	--> Contenido principal: 		<main></main>
+	--> Agrupación: 				<div></div>
+	--> Enlace a otra pagina: 		<a href=""></a>
+	--> Enlace dentro de la pagina: <a id="Arriba"></a> + <a href="#Arriba"></a>
+	--> Lista ordenada: 			<ol></ol>
+	--> Lista desordenada: 			<ul></ul>
+	--> Artículo de una lista: 		<li></li>
+	--> Texto resaltado:			<mark></mark> 
+
+	--> Texto de otra fuente: 		<blockquote></blockquote>
+	--> Nombre-Valor: 				<dl></dl>
+	--> Fuente de importancia:		<strong></strong>
+	--> Letra pequeña:				<small></small>
+	--> Referencia: 				<cite></cite>	
+	--> Cita dentro de texto: 		<q></q>
+	--> Subíndice y superíndice: 	<sub></sub> <sup></sup>
+	--> Video: 						<video></video>
+	--> Audio: 						<audio></audio>
+
+
+
+---------------------------------------------------------------------------------------------
+
+-- FORMULARIOS
+
+	--> Formulario: 			<form></form>
+	--> Etiqueta: 				<label></label>
+	--> Input type: 			<input type="" name="">
+	--> Boton: 					<button></button>
+	--> Selector: 				<select></select>
+	--> Opcion: 				<option></option>
+	--> Edición de texto: 		<textarea></textarea>
+	
+	--> Resultado: 				<output></output>
+	--> Progreso de tarea: 		<progress value="" max="">
+	--> Mostrar detalles:		<details></details>
+
+
+	ATRIBUTOS:
+
+		--> autocomplete (on/off): el navegador tratará de autocompletar los valores
+		--> novalidate:
+
+
+
+----------------------------------------------------------------------------------------------
+
+-- INPUT
+
+	--> Lista de opciones de un input con el mismo nombre. Agrupación:
+		<datalist id="Vahiculos">
+			<option value="moto"></option>
+			<option value="coche"></option>
+		</datalist>
+
+	--> Boton:					<input type="button" name="">
+	--> Checkbox: 				<input type="checkbox" name="">
+	--> Archivo: 				<input type="file" name="">
+	--> Valor oculto: 			<input type="hidden" name="">
+	--> Imagen como botón: 		<input type="image" name="">
+	--> Grupo de opciones: 		<input type="radio" name="">
+	--> Limpia los campos: 		<input type="reset" name="">
+	--> Envío del formulario: 	<input type="submit" name="">
+	--> Campo de texto: 		<input type="text" name="">
+	--> Contraseña: 			<input type="password" name="">
+	--> Telefono: 				<input type="tel" name="">
+	--> Email:		 			<input type="email" name="">
+	--> URL: 					<input type="url" name="">
+	--> Busqueda: 				<input type="search" name="">
+	--> Slider:					<input type="range" min="" max="" value=" -defecto- " name="">
+	--> Numero o decimal: 		<input type="number" name="">
+	--> Fecha: 					<input type="date" name="">
+	--> Fecha y hora: 			<input type="datetime" name="">
+	--> Fecha y hora local: 	<input type="datetime-local" name="">
+	--> Mes: 					<input type="month" name="">
+	--> Hora: 					<input type="time" name="">
+	--> Semana: 				<input type="week" name=""> 
+	--> Color: 					<input type="color" name="">
+
+
+	ATRIBUTOS:
+
+		--> name(=""): cuando se envie el formulario, asigna el valor al name. Esto se usa en fetch
+		--> autocomplete (on/off): 	el navegador tratará de autocompletar los valores
+		--> autofocus: 				establece el foco en un input al cargar la página 
+		--> required: 				debe rellenar el campo para enviar el formulario
+		--> placeholder (=""): 		texto en el input sin escribir
+		--> multiple: 				el usuario puede introducirmás de un valores
+		
+		--> pattern: 				expresión regular que se debe evaluar.
+				Ejemplo: primera letra mayus o minus, las 5 siguientes hasta 19 mayus, minus y numeros.
+					[a-zA-Z][a-zA-Z0-9]{5,19}
+				Ejemplo: acepta minus, mayus, numeros y guiones bajos y altos de 8 a 20 caract.
+					[a-zA-Z0-9_-]{8,20}
+
+----------------------------------------------------------------------------------------------
+
+--IMAGENES
+
+	--> Imagen: 					<img src="" alt=" -Texto para discapacitados- ">
+	--> Encapsular imagenes: 		<figure></figure>
+	--> Pie de foto: 				<figcaption></figcaption>
+
+
+----------------------------------------------------------------------------------------------
+
+-- SCRIPT
+
+	--> Incluir codigo script:		<script type="text/javascript"></script>
+	--> Insercion script: 			<template></template>
+	--> Area de dibujo: 			<canvas></canvas>
+
+
+
+----------------------------------------------------------------------------------------------
+
+--TIME
+
+	--> Fecha: 						<data value=" -Formato- "></data>
+	--> Fecha/hora: 				<time datetime=" -Formato- "></time>
+	
+	--> AAAA-MM-DD(Separador)hh:mm:ssDZH(Zona horaria)
+
+
+
+----------------------------------------------------------------------------------------------
+
+--VALOR ESCALAR EN UN RANGO
+
+	--> Es una barrita que muestra lo que falta hasta llegar al máximo.
+	--> Por ejemplo, resultado de una votación o uso de disco: 
+	<meter min="" max="" value="" low="" high="" optimum=""></meter>
+
+
+
+----------------------------------------------------------------------------------------------
+
+--ATRIBUTOS
+
+	-- 	CONTENTEDITABLE --
+		
+		Atributo de tipo enumerado (true,false) que permite hacer que un elemento sea un área editable.
+
+	-- FOR --
+
+		Si pones en un label un for con una id, al pinchar en el label, va al input
+
+
+
+----------------------------------------------------------------------------------------------
+
+-- AUDIO Y VIDEO 
+
+	<audio></audio>
+
+	ATRIBUTOS:
+
+		--> src: dirección de recurso
+		--> preload(="none|metadata|auto"): debería y cómo cargarse el fichero de audio
+		--> autoplay: se inicia nada más cargar
+		--> loop: se repite infinitamente
+		--> muted: silenciar
+		--> controls: muestra los controles de audio
+
+
+	<video></video>
+
+	ATRIBUTOS:
+
+		--> src: dirección de recurso
+		--> poster: imagen a mostrar mientras no este disponible el video 
+		--> width y height: ancho y alto
+	
+
+	<track kind="" src="">
+
+		--> kind (="subtitles/captions/descriptions/chapters/metadata")
+		--> src: dirección del fichero de texto asociado a la pista
+		--> srclang: idioma del texto
+		--> label: título de la pista
+		--> default: pista por defecto
+
+
+
+----------------------------------------------------------------------------------------------
+
+--IMAGENES ADAPTATIVAS
+
+	En función de la resolución de la pantalla carga una u otra. Permite especificar diferentes fuentes, mediante el elemento <source>, para <img>.
+	Cuando el elemento <source> se usa junto a <pictura> admite:
+
+	ATRIBUTOS de <source>:
+
+		--> srcset: permite indicar una o más imagenes candidatas, en función de la densidad de pixel del dispositivo, separadas por comas
+		--> media: 	permite especificar reglas media query para usar o no un elemento <source>
+		--> type: 	permite especificar el formato de la imagen para que el navegador elija el formato más adecuado.
+
+		<picture>
+			<source media="(min-width: 45em)" srcset="img_grande.jpg">
+			<source media="(min-width: 32em)" srcset="img_mediana.jpg">
+			<img src="img_pequenya.jpg" alt="Mano universidad">
+		</picture>
+
+
+	ATRIBUTOS de <img>:
+
+		--> srcset: igual que el anterior.
+		--> sizes: especifica tamaño con el que se mostrará la imagen en función de las caracteristicas del dispositivo.
+	
+		<img 	srcset=	"	img_grande.jpg 160w,
+							img_mediana.jpg 320w,
+							img_pequenya.jpg 640w"
+				sizes=	"	(max-width:320px) 150px,
+							(max-width:640px) 300px,
+							600px" 
+				src="img_pequenya.jpg" alt="Mano uni">
+
+		*Para anchos de ventana de hasta 320px, se mostrará img_pequenya.jpg con un
+ancho de 150px;
+		*Para anchos de ventana de hasta 640px, se mostrará img_mediana.jpg con un
+ancho de 300px;
+		*Para el resto de anchos, se mostrará img_pequenya.jpg con un ancho de 600px.
+
+
+
+
+----------------------------------------------------------------------------------------------
+
+--EMMET
+
+	nav>ul>li*5>a[href="pagina$.html"]{enlace $}
+
+	<nav> 
+	 	<ul> 
+	 		<li><a href="pagina1.html">enlace 1</a></li>
+	 		<li><a href="pagina2.html">enlace 2</a></li>
+	 		<li><a href="pagina3.html">enlace 3</a></li>
+	 		<li><a href="pagina4.html">enlace 4</a></li>
+	 		<li><a href="pagina5.html">enlace 5</a></li>
+	 	</ul>
+	 </nav> 
+
+
+	 > : 			Dentro de una etiqueta pongo eso 
+	 ^ : 			Salimos de la etiqueta anterior y añadimos más
+	 loremX : 		Pone X palabras del lorem 
+	 *X:			Pone X etiquetas distintas de lo anterior
+	 $: 			Bucle
+	 []:			Atributo de una etiqueta
+	 {}: 			Contenido de una etiqueta

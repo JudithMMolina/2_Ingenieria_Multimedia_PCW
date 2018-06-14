@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="index.css">
+		<script src="index.js"></script>
+		<title>Puzzle</title>
+	</head>
+
+
+
+	<body>
+
+		<a id="top" href=""></a>
+
+
+		<header>
+			<img src="foto.png" alt="Logotipo">
+			<div>
+				<h1>Pusles Wais</h1>
+				<h2>Donde no podr&aacute;s parar de jugar :v</h2>
+			</div>
+		</header>
+
+
+
+
+		<main>
+
+			<div>
+				<h2>Imagen de referencia</h2>
+				<!-- Cuando le damos click al canvas, tenemos que llamar al click del inputfile para que se abra -->
+				<canvas id="canvas1" class="seleccionable" onclick="document.getElementById('imagen').click();"></canvas>
+				
+				<!-- Cuando se hace un cambio en el canvas (has insertado foto) se llama a cargarImagen-->
+				<input id="imagen" type="file" accept="image/*" name="fotografia" onchange="cargarImagen(this);" style="display: none">
+			</div>
+
+			<div>
+				<h2>¡Ordena las piezas!</h2>
+				<canvas id="canvas2"></canvas>
+				
+				<footer>
+					<div id="parametros">
+						<label>Color:&nbsp;
+							<input id="color" type="color" name="color" onchange="cambioColor();">		<!-- Cambiar -->
+						</label>
+						<label>Dificultad:&nbsp;
+							<select id="dificultad" onchange="cambioDificultad();">		<!-- Cambiar -->
+								<option value="facil">F&aacute;cil</option>
+								<option value="medio">Medio</option>
+								<option value="dificil">Dif&iacute;cil</option>
+							</select>
+						</label>
+					</div>
+					
+					<!-- Esto no aparece hasta que no ha empezado el juego, por eso su display es none -->
+					<div id="marcador" style="display: none">
+						<label id="labelTiempo">
+							Tiempo de juego:&nbsp;
+							<output id="tiempo"></output>
+						</label>
+						<label id="NoOrdenadas">
+							Piezas desordenadas:&nbsp;
+							<output id="piezas"></output>
+						</label>
+						<label id="Movimientos">
+							Movimientos realizados:&nbsp;
+							<output id="mov"></output>
+						</label>
+					</div>
+
+					<!-- Esto está en disabled porque o no hay imagen o el juego no ha empezado ya. Cuando empiece los pondemos en enabled -->
+					<div id="botones">
+						<button id="empezar" disabled="true" onclick="empezarJuego();">Empezar</button>
+						<button id="terminar" disabled="true" onclick="terminarJuego();">Terminar</button>
+						<button id="ayuda" disabled="true" onclick="mostrarAyuda();">Ayuda</button>
+					</div>
+				</footer>
+
+			</div>
+		</main>
+
+
+
+		<footer>
+			<div id="acerca">
+				<a href="acerca.html">Acerca de</a></div>
+			<div id="copyright">
+				&copy;&nbsp;PCW&nbsp;<time datetime="2018-05-09 17:35">2018</time>
+			</div>
+			<div id="subir">
+				<a href="#top">Subir</a>
+			</div>
+		</footer>
+
+
+	<!-- IMPORTANTE -->
+	<script>
+		prepararCanvas();
+	</script>
+
+	</body>
+
+</html>

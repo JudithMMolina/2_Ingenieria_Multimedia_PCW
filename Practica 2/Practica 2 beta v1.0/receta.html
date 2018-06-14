@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+	<meta charset="UTF-8">
+	<title>Lasa&ntilde;a</title>
+	<meta name="description" content="Si quieres aprender a cocinar f&aacute;cil
+	y r&aacute;pido, esta web es justo lo que buscas.">
+	<meta name="robots" content="noindex, nofollow">
+	<link rel="stylesheet" href="CSS/receta.css">
+	<link rel="stylesheet" type="text/css" href="Font/css/fontello.css">
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans">
+	<script src="practica02.js"></script>
+
+</head>
+
+
+
+<!-- Si no estas logueado ni te deja votar ni escribir comentarios -->
+<body onload="RecetaCarga();">
+	<a id="top"></a>
+
+	<header>
+
+		<img src="Imagenes/fogon2.jpeg" alt="Fog&oacute;n" id="logo">	<!-- El ID esta para que se haga un salto a arriba. ALT es un lector para discapacitados -->
+		<div>	
+			<h1>Recetas El Fog&oacute;n</h1>
+			<h2>Recetas de cocina, f&aacute;cil y r&aacute;pido</h2>
+		</div>	
+
+	</header>
+
+	<nav>
+		<input type="checkbox" id="CKBmenu">
+		<ul>
+			<!-- CLASS esta para los iconos. SPAN para que aparezca cuando queramos-->
+			<li><label for="CKBmenu">&equiv;</label></li>	<!-- FOR se utiliza para relacionar el input checkbox con el icono-->
+
+			<!-- Se pone el texto y el icono en span distintos para poder ocultar uno de ellos segun ponga en css-->
+			<li><a href="index.html"><span class="icon-home"></span><span>Inicio</span></a></li>
+			<li><a href="buscar.html"><span class="icon-search"></span> <span>Buscar</span></a></li>
+			<li id="iniciarses"><a href="login.html"><span class="icon-login"></span><span> Login</span></a></li>
+			<li id="registro">
+				<a href="registro.html"><span class="icon-user-plus"></span> <span>Registro</span></a>
+			</li>
+			<li id="nuevare">
+				
+			</li>
+			<li id="cerrarses" onclick="return CerrarSesion(true,0);">
+				
+			</li>
+		</ul>
+	</nav>
+
+
+
+
+
+	<main>
+		<section >
+			<!-- Está todo vacio porque me lo devuelve el FETCH -->
+			<div id="infoReceta">
+				<h2 id="titulo"></h2>
+				<div id="datos">
+					
+				</div>
+
+				<div id="iconos">
+					
+				</div>
+
+				<div id="foto"></div>
+				<div id="fotos">
+					
+				</div>
+				
+
+				<div id="elaboracion">
+					<h3><u>INGREDIENTES:</u></h3>
+					<ul id="ingredientes">
+						
+					</ul>
+
+					<br>
+					<br>
+					<br>
+
+					<h3><u>ELABORACI&Oacute;N:</u></h3>
+					<div id="elaboracion2"> </div>
+					
+				</div>
+			</div>
+
+			<div id="voto">
+				
+			</div>
+			<ul id="vcorrecto"></ul>
+			<ul id="vincorrecto"></ul>
+
+			<br>
+			<br>
+			
+			<h3 id="comentariostitle">COMENTARIOS:</h3>
+
+
+			<!-- Aparece esto si no estás logueado -->
+			<div id ="escribir">
+				<p>Para escribir un comentario tienes que estar <a href="login.html">logeado</a>.</p>
+			</div>
+
+			<div id="comentarios">
+				
+
+			</div>
+
+
+
+		</section>
+	
+			
+	</main>
+
+
+	<footer>
+		<a href="acerca.html" id="Nosotros">Acerca de nosotros</a>
+		<p id="copy">&copy;&nbsp;<strong>PCW</strong><time datetime="2018-02">&nbsp;2018</time></p>
+		<a href="#top" id="Arriba">Sube</a>
+	</footer>
+
+</body>
+</html>

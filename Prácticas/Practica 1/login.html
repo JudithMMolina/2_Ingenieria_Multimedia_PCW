@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+	<meta charset="UTF-8">
+	<title>Login</title>
+	<meta name="description" content="Si quieres aprender a cocinar f&aacute;cil
+	y r&aacute;pido, esta web es justo lo que buscas.">
+	<meta name="robots" content="noindex, nofollow">
+	<link rel="stylesheet" href="CSS/login.css">
+	<link rel="stylesheet" type="text/css" href="Font/css/fontello.css">
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans">
+
+</head>
+
+<body>
+	<a id="top"></a>
+
+	<header >
+
+		<img src="Imagenes/fogon2.jpeg" alt="Fog&oacute;n" id="logo">	<!-- El ID esta para que se haga un salto a arriba. ALT es un lector para discapacitados -->
+		<div>
+		
+			<h1>Recetas El Fog&oacute;n</h1>
+			<h2>Recetas de cocina, f&aacute;cil y r&aacute;pido</h2>
+		</div>	
+
+	</header>
+
+	<nav>
+		<input type="checkbox" id="CKBmenu">
+		<ul>
+			<!-- CLASS esta para los iconos. SPAN para que aparezca cuando queramos-->
+			<li><label for="CKBmenu">&equiv;</label></li>	<!-- FOR se utiliza para relacionar el input checkbox con el icono-->
+
+			<!-- Se pone el texto y el icono en span distintos para poder ocultar uno de ellos segun ponga en css-->
+			<li><a href="index.html"><span class="icon-home"></span><span>Inicio</span></a></li>
+			<li><a href="buscar.html"><span class="icon-search"></span> <span>Buscar</span></a></li>
+			<li><a href="login.html"><span class="icon-login"></span><span> Login</span></a></li>
+			<li><a href="registro.html"><span class="icon-user-plus"></span> <span>Registro</span></a></li>
+			<li><a href="nueva-receta.html"><span class="icon-plus"></span><span>Nueva receta</span></a></li>
+			<li><a  href=""><span class="icon-logout-2"></span><span>Logout</span></a></li>
+		</ul>
+	</nav>
+
+
+
+
+	<main>
+		<h2> Inicio de sesi&oacute;n </h2>
+		<form method="get"> 
+			
+			<!-- Inicio sesión formulario -->
+			<div id="logeando">
+				<label id="Username">Login:</label> 
+				<input type="text" id="Usuario" autofocus required placeholder="Nombre de usuario" pattern="[a-zA-Z][a-zA-Z0-9]{5,19}">
+
+				<label id="userpass">Contraseña:</label> 
+				<input type="password" id="Cont" required pattern="[a-zA-Z0-9_-]{8,20}">
+			
+			</div>
+
+			<br>
+
+			<div id="fuera">
+				<button type="submit">Enviar</button>	
+				<br>
+				<p>¿A&uacute;n no eres usuario?</p>
+				<a href="registro.html">Reg&iacute;strate</a>
+			</div>
+
+		</form>
+	</main>
+
+
+	<footer>
+			<a href="acerca.html" id="Nosotros">Acerca de nosotros</a>
+			<p id="copy">&copy;&nbsp;<strong>PCW</strong><time datetime="2018-02">&nbsp;2018</time></p>
+			<a href="#top" id="Arriba">Sube</a>
+	</footer>
+
+</body>
+</html>

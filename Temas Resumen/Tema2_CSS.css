@@ -1,0 +1,434 @@
+
+*** INDICE ***
+
+	MODELO CAJA: 												25
+	PSEUDO-ELEMENTOS: 											32
+	PSEUDO-CLASES: 												44
+	SELECTORES: 												83
+	UNIDADES DE LONGITUD RELATIVAS: 							99
+	CALCULOS Y VARIABLES: 										99
+	COLORES: 													120
+	EFECTOS DE TEXTO: 											130
+	FONDOS: 													137
+	BORDES: 													181
+	GARDIENTES, TRANSICIONES y TRANSFORMACIONES 2D y 3D: 		199
+	ANIMACIONES: 												216
+	WEB FONTS Y WEB ICONS: 										256
+	MEDIA QUERY: 												287
+	FLEX BOX: 													313
+	GRID LAYOUT: 												388
+
+
+
+---------------------------------------------------------------------------------------
+
+-- 	MODELO CAJA
+
+	margin > border > padding > contenido
+
+
+---------------------------------------------------------------------------------------
+
+--	PSEUDO-ELEMENTOS 
+
+	Un pseudo-elemento se forma madiante '::' + nombre
+
+	--> ::first-line 	-	Contenido de la primera línea formateada de un elemento
+	--> ::first-letter	-	Representa la primera letra de un elemento
+	--> ::before 		-	Representa el contenido generado antes de un elemento
+	--> ::after			-	Representa el contenido generado después de un elemento
+
+
+-----------------------------------------------------------------------------------------
+
+-- PESUDO-CLASES
+
+	Una pseudo-clase se forma mediante ':' + nombre (ej :hover)
+	Las clases también se pueden añadir desde html y hacen efecto en css llamandolas X.clase. Poniendole una clase al span,
+	podemos hacer segun un mediaquery, que desaparezca una parte con display-block : none
+
+		--> :target			-	El estilo se aplicará a cuando se pinche en el enlace que lleva a ellos.
+		--> :lang			-	Permite seleccionar los elementos de un documento a los que se les ha aplicado el atributo de idioma.
+
+
+	PSEUDO-CLASES DINÁMICAS:
+
+		--> :link y :visited		- Selecciona enlaces no visitados y visitados
+		--> :hover					- Se aplica cuando el usuario pasa el ratón por encima
+		--> :active					- Se aplica cuando el usuario está seleccionando
+		--> :focus					- Se aplica cuando el elemento tiene el foco
+
+		--> :enabled y :disabled	- Representa elementos habilitados y deshabilitados
+		--> :checked				- Representa elementos que están seleccionados
+
+		--> :root					- Representa el elemento raíz del documento <html>
+		--> nth-child(an+b)			- Representa el elemento la pos an+b en la lista de hijos del nodo padre. ODD e EVEN.
+		--> :nth-last-child	(")		- Igual que nth-child(an+b), pero empezando del ultimo al primero.	
+		--> :nth-of-type(an+b)		- Representa el que ocupa la pos an+b en la lista de hijos del mismo tipo y con el mismo nodo padre. ODD e EVEN
+		--> :nth-last-of-type		- Lo mismo que el anterior pero desde el último
+		--> :first-child
+		--> :old-child
+		--> :first-of-type			- Primero de la lista de nodos hijo de un elemento
+		--> :last-of-type 			- Ultimo de la lista de nodos hijo de un elemento
+		--> :only-child				- Representa al único hijo de un elemento
+		--> :only-of-type			- Representa el único hijo de un elemento cuyo tipo es el indicado delante
+		--> :empty					- Elemento que no tiene hijos
+		--> :not()					- Selecciona el elemento que no está representado por dicho argumento
+									  Ej: input:not([type="file"])	todos los elementos que no son tipo file
+									  Ej: div:not(.home)	todos DIV que no son de la clase .home
+
+
+---------------------------------------------------------------------------------------------------------------
+
+--SELECTORES
+
+	--> h1 + h2			- Se aplica a los h2 que tengan como hermano un h1
+	--> h1>p 			- Se aplica al elemento p hijo de un h1
+	--> [atr] 			- Se aplica a todos los que tengan el atributo especificado
+	--> [atr=val] 		- Se aplica a todos los que tengan el atributo especificado con ese valor en concreto
+	--> [atr=~val] 		- Se aplica a todos los que tengan el atributo cuyo valor es una lista de palabras separadas por espacios y una de ellas es val
+	--> [atr|=val] 		- Se aplica a todos los que tengan como atributo atr cuyo valor es val o val-X
+	--> [atr^=val]  	- Se aplica a todos los que tengan ese atributo si su valor no es vacío
+	--> [atr$=val] 		- Se aplica a todos los que tengan ese atributo cuyo valor finaliza por val
+	--> [atr*=val] 		- Se aplica a todos los que tengan ese atributo cuyo valor contiene la subcadena val
+
+
+
+----------------------------------------------------------------------------------------------------------------
+
+--UNIDADES DE LONGITUD RELATIVAS
+
+	LONGITUD:
+		--> em: valor de la propiedad font-size de un elemento
+		--> cm: valor en centimetros
+		--> mm: valor en milimetros
+		--> q: cuarto de milímetro
+		--> im: pulgada
+		--> px: píxel	
+
+	ANGULAR
+		--> deg: grados hasta 360
+		--> rad: radianes hasta 2pi
+
+	TIEMPO
+		--> s: segundos
+		--> ms: milisegundos
+
+
+----------------------------------------------------------------------------------------------------------------
+
+--CALCULOS Y VARIABLES
+
+	--> calc(expresión)		: permite hacer calculos
+
+	--> Si ponemos el prefijo --, se está declarando una variable. Estas variables se heredan. 
+		Para poner su nombre hay que usar var(--expresion)
+
+
+---------------------------------------------------------------------------------------
+
+-- COLORES
+
+	rgba(red -255-, green -255-, blue -255-, alpha -1-)
+
+
+---------------------------------------------------------------------------------------
+
+-- EFECTOS DE TEXTO
+
+	-->FUENTE	
+		
+		- color: permite cambiar el color de la fuente
+		- font-family: elegir fuente a utilizar para mostrar el texto
+		- font-size: tamaño de la fuente
+		- font-style: permite poner o quitar el texto en cursiva (normal o italic)
+		- font-weight: permite poner la fuente en negrita (normal, bold, lighter, bolder o valor entre 100 y 900)
+		- text-transform: cambiar el texto entre mayusculas y minusculas
+			none -> evita la transformacion
+			uppercase -> muestra todo en mayusculas
+			lowercase -> muestra todo en minusculas
+			capitalize -> muestra las palabras en minuscula con su primera letra en mayus
+		- text-decoration: permite subrayar
+			none -> evita el subrayado
+			underline -> subraya
+			overline -> añade al texto una línea superior
+			line-through -> tacha
+
+
+	-->DISEÑO
+
+		- text-aling (left, right, center, justify): alinea el texto horizontalmente
+		- text-shadow: (despla_H despla_V, radio_desenfoque, color)
+		- text-overflow : permite especificar cómo se tratará el texto contenido en un elemento en el que no quepa en él.
+			clip -> valor por defecto. Oculta texto que sobresale.
+			ellipsis -> corta el texto usando "..." para indicar que hay más
+			ESTA REQUIERE: overflow:hidden; white-space: nowrap; width: ancho_contenedor;
+
+		- line-height: permite establecer la altura de cada línea de texto
+		- letter-spacing, word-spacing: establecer el espacio entre letras y palabras
+		- text-indent: espacio horizontal en la primera línea de texto
+		- white-space: manejar los espacios en blanco "de más" que se encuentran en el texto
+			normal -> los elimina
+			pre -> mantiene los espacios "de más"
+			nowrap -> igual que normal, pero el texto en una única línea
+			pre-wrap -> como pre, pero en varias líneas
+			pre-line -> normal, pero no elimina retornos de carro.
+
+
+
+---------------------------------------------------------------------------------------
+
+-- FONDOS
+
+	- background-color (color o transparent)
+	
+	- background-image: espacificar una o más imágenes de fondo. Usar url(imagen.png)
+	- background-origin: punto de referencia para el posicionamiento de imagen de fondo
+		padding-box
+		border-box
+		contant-box
+	- background-position: posion de la imagen en el fondo tomado como ref en el anterior
+		right center, top left...
+	- background-repeat: modo de repetición de la imagen
+	- background-size: tamaño imagen, ancho, alto o, cover o contain 
+
+
+
+---------------------------------------------------------------------------------------
+
+-- BORDES
+
+	- border-top-color, border-right-color, border-bottom-color, border-left-color
+	- border-color: (top right bottom left) + tipo
+	- border-top-style, border-right-style, border-bottom-style, border-left-style
+		none, hidden, dotted, dashed, solid, double, groove, ridge, inset, outset
+	- border-style: (top right bottom left) + tipo
+	- border-width """"""
+	- border-radius: (radio_H / radio_V)
+	- box-shadow: (inset despla_H despla_V desenfoque expansion color)
+
+
+	- border-image: (url(image) porcion_imagen modo_aplicacion(stretch, repeat, round, space))
+
+
+---------------------------------------------------------------------------------------
+
+-- GARDIENTES, TRANSICIONES y TRANSFORMACIONES 2D y 3D
+
+	- linear-gradient( to direccion, color_parada,color_parada+,"")
+		direccion - dir_horizontal/vertical(top, right, left, bottom) o en grados (deg,rad)
+		color_parada: color por el que debe pasar el gradiente. Porcentaje para lo que ocupa
+	- radial-gradient(forma tamaño at centro, color_parada,col"")
+		forma -> circle o ellipse
+		tamaño -> closest-side, closest-corner, farthest-side, farthest-corner
+		centro -> center, top, right, left y bottom
+		color_parada""
+
+	
+
+	- transition-property: especifica nombre de la propiedad CSS a la que aplicar la transición.
+							se puede más de una separadas por , . Admite valores none y all
+	- transition-duration: interbalo en segundos
+	- transition-timing-function: como se aplicará la transición, puediendo cambiar la velocidad durante el tiempo
+		ease, linear, ease-in, ease-out, ease-in-out, cubic-bezier(n,n,n,n)
+	- transition-delay: tiempo de demora de comienzo de la transición
+	- transition: """""""
+
+		color: #00f;
+		transition-property: color; /*solo se aplica a la propiedad color*/
+		transition-duration: 2s; /* el cambio de color durará 2 segundos */
+		transition-timing-function: linear; /* la trans será linear */
+		transition-delay: 0.5s; /* comenzara pasados los 0.5*/
+		/* PARA QUE FUNCIONE EN FIREFOX SE USA EL PREFIJO -moz */
+
+
+	- translate(tx, ty) -> tx translacion horizontal y ty vertical
+	- rotate(angulo)
+	- scale(sizex, sizey)
+	- skew (angulox, anguloy)
+
+
+	.................................Esto sigue en la diapositiva 83 del tema 3
+
+
+-------------------------------------------------------------------------------------------------------------
+
+-- ANIMACIONES
+
+	@keyframes nombre_de_la_animacion{
+		0%{ /*estilo a aplicar al inicio de la animación*/
+
+		}
+		20%{ /*estilo a aplicar en el 20% de la animaćión*/
+
+		}
+		100%{ /*estilo a aplicar al final de la animación*/
+
+		}
+	}
+
+
+	Crear regla CSS para aplicar:
+
+		-> animation-name: especifica el nombre de la secuencia de keyframes a aplicar
+		-> animation-duration: especifica el tiempo que la animación debe durar
+		-> animation-timing-function: transicióna aplicar entre keyframes
+			ease, ease-in, ease-out, ease-in-out, linear
+		-> animation-direccion: (normal, alternate, reverse, alternate-reverse)
+		-> animation-delay: tiempo hasta que se inicia
+		-> animation-iteration-count: numero de veces que se repite (infinite, o N>1)
+		-> ANIMATION: (an-nam an-dur an_tim-func an-del an-it-co an-dir)
+
+	Necesario usar prefijos -webkit- -moz- -ms- -o-
+
+
+-----------------------------------------------------------------------------------------------------------
+
+-- WEB FONTS
+
+	@font-face{
+		font-family: nombre_de_la_fuente;
+		src: url(url_fichero_donde_esta_la_fuente) [format(formato_fuente (woff, truetype, opentype, embedded-opentype, svg))];
+	}
+
+
+		@font-face{
+			font-family: MyGentium;			/*nombre asignado a la fuente*/
+			src: 	local(Gentium),			/*usar fuente local si esta instalada*/
+					url(`Gentium.ttf`);		/*sino, se descargara*/
+		}
+
+	Fuentes de GOOGLE -> 	desde html visto en los apuntes
+							desde CSS mediante @import url(url-de-la-fuente-en-google)
+								despues se le asigna al elemento con font-family	
+
+
+-- ICON FONTS
+
+	Hazlo desde html
+
+
+-----------------------------------------------------------------------------------------------------------
+
+-- MEDIA QUERY
+
+	@media dispositivos [and (condicion)]* {
+
+	}
+
+		De normal usa: @media all and (min-width:XXXpx) {}
+			min-width -> ancho de pantalla mayor o igual a
+			max-height -> alto de pantalla menor o igual a
+			min-width and max-width -> dispositivos entre tanto y tanto
+
+
+	@media screen and (orientation:portrait) {} /* Orientacion vertical de la pantalla */
+	@media screen and (orientation:landscape) {} /* Orientacion horizontal de la pantalla */
+
+	usar el <meta name"viewport" content="width=device-width, initial-scale=1" />
+
+
+-----------------------------------------------------------------------------------------------------------------
+
+--FLEXBOX
+
+	- display: flex;			Hace que el contenedor sea flex de tipo block
+	- display: inline-flex;		Hace que el contenedor sea flex de tipo inline-block
+
+	- flex-direction;		Indica el eje en el que se aplicará la disposición flex
+		row
+		row-reverse
+		column
+		column-reverse
+
+	- flex-wrap;			Los nodos hijo de un contenedor se muestran por defecto en una línea
+		nowrap					Todos en una línea de izquierda a derecha
+		wrap					Multiples líneas, empezando de izquierda a derecha
+		wrap-reverse			Igual que la anterior pero al reves
+
+	- justify-content: ;	Permite definir la alineación de los elementos hijo a lo largo del eje del flex-direction
+		flex-start				Se alinean al inicio del eje
+		flex-end				Se alinean al final del eje
+		content					Se centran en el eje
+		space-between			Se distribuyen uniformemente por todo el eje del inicio al final
+		space-around			Se distribuyen uniformemente de manera que el espacio entre elementos es el mismo
+
+	- align-items: ; 		Como se colocan los elementos a lo largo del eje VERTICAL
+		flex-start				Los elementos se alinean al inicio del eje
+		flex-end				Se alinean al final del eje
+		content					Se alinean en el centro del eje
+		baseline				Se alinean de manera que la primera linea de texto de cada elemento esta en la misma linea
+		stretch					Estira los elementos para que rellenen todo el eje
+
+	-align-content: ;		Permite alinear las lineas del contenedor flex en funcion del espacio libre en el eje vertical
+		flex-start 				Las lineas se situan al inicio del eje
+		flex-end 				Las lineas se situan al final del eje
+		center 					Se centran en el contenedor
+		space-between 			Las lineas se distribuyen uniformemente en todo el eje, primera line al inicio, ultima al final
+		space-around 			Las lineas se distribuyen uniformemente por todo el eje de manera que el espacio encima y debajo es el mismo
+		stretch					Las lineas se estiran para usar todo el espacio restante
+
+
+	- order:; 				Permite cambiar el orden en el que se muestran los nodos hijo a lo largo del flex-direction
+	- flex-grow: ; 			Permite asignar a los nodos hijo la posibilidad de crecer si fuera necesario
+	- flex-shrink: ; 		Permite encogerse si fuera necesario
+	- flex-basis: ;			Define el tamaño por defecto de un elemento antes de que se distribuya el espacio disponible libre
+	- align-self: ; 		Permite modificar la alineacion por defecto de los elementos de forma individual
+		flex-start
+		flex-end
+		center
+		baseline
+		stretch
+		auto
+
+
+
+-----------------------------------------------------------------------------------------------------------
+
+-- GRID LAYOUT
+
+	display: grid;				Hace que el contenedor sea grid block
+	display: inline-grid;		Hace que el contenedor sea grid inline-block
+	display: subgrid;			Permite crear contenedores grid dentro de otro
+
+	Define numero de filas y columnas del grid con una lista de valores separadas por espacios
+	grid-template-rows: <tamaño> .... | <nombre> <tamaño> ...
+	grid-template-columns: <tamaño> .... | <nombre> <tamaño> ...
+		<tamaño> puede ser una longitud o porcentaje
+		<nombre> es un nombre arbitrario que se puede dar a la fila/columna para hacer referencia a ella.
+				Entre []
+
+		Se puede usar repeat(num,regla) para repetir partes de una regla
+
+	grid-template-areas: define un grid referenciando los nombres de las áreas grid especificadas por la propiedad grid-area
+		grid-template-areas: "head head" "nav main" "nav foot"
+
+	A cada elemento se le asigna el área con GRID-AREA
+
+
+	Ancho de las líneas del grid
+		grid-column-gap: tamaño
+		grid-row-gap: tamaño
+
+
+	Alinear el contenido del grid en el eje horizontal
+		justify-items: (start, end, center, stretch)
+
+	Alinear el contenido del grid en el eje vertical
+		align-items: (start, end, center, stretch)
+
+	Alinear la rejilla dentro del contenedor grid horizontalmente
+		justify-content: (start, end, center, stretch, space-around, space-between, space-evenly)
+
+
+	Alinear la rejilla dentro del contenedor grid verticalmente
+		align-content: (start, end, center, stretch, space-around, space-between, space-evenly)
+
+	Permite asignar un nombre a un elemento para que pueda ser referenciado más tarde en grid-template-areas
+
+
+	Alinea horizontalmente el contenido dentro de un elemento grid
+		justify-self: (start, end, center, stretch)
+
+	Alinea verticalmente el contenido dentro de un elemento grid
+		align-self: (start, end, center, stretch)

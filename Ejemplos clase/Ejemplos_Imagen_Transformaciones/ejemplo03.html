@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Clase 3 del tema 7</title>
+	<link rel="stylesheet" type="text/css" href="estilo03.css">
+	<script src="codigo03.js"></script>
+
+</head>
+<body>
+	<h1>Ejemplo n&uacute;mero 3</h1>
+	<section>
+		<h2>Canvas 01</h2>
+		<canvas id="cv01"></canvas>
+		<footer>
+			<button onclick="prueba01();">Prueba 1</button>
+			<button onclick="transladar();">Transladar</button>
+			<button onclick="escalar();">Escalar</button>
+			<button onclick="rotar();">Rotar</button>
+			<br>
+			<button onclick="limpiar(event);">Limpiar</button>
+			<button onclick="pintarImagen01();">Imagen</button>
+			<button onclick="recortar();">Recortar Imagen</button>
+			<button onclick="copiarImagen();">Copiar</button>
+		</footer>
+	</section>
+	
+	<section >
+		<h2>Canvas 02</h2>
+		<div id="footer2">
+			<canvas id="cv02"></canvas>
+			<footer>
+				<button onclick="dibujarLineas();">Lineas</button>
+				<button onclick="limpiar(event);">Limpiar</button>
+				<!-- Necesario para la cantidad de fichas que quedan o el cronometro.
+				Para mostrar resultados, mejor usar OUTPUT-->
+				<div>
+					<span>Posicion (x,y):</span><output id="posXY"></output>
+				</div>
+				<div>
+					<span>Posicion Entrada (x,y):</span><output id="posEXY"></output>
+				</div>
+				<div>
+					<span>Posicion Salida (x,y):</span><output id="posSXY"></output>
+				</div>
+				<div>
+					<span>Posicion Click (x,y):</span><output id="posCXY"></output>
+				</div>
+				<div>
+					<span>Posicion Click Down (x,y):</span><output id="posDXY"></output>
+				</div>
+				<div>
+					<span>Posicion Click Up (x,y):</span><output id="posUXY"></output>
+				</div>
+				<div>
+					<span>Posicion Fila Columna (x,y):</span><output id="posFCXY"></output>
+				</div>
+			</footer>
+		</div>
+	</section>
+	<script>
+		prepararCanvas();
+	</script>
+</body>
+</html>

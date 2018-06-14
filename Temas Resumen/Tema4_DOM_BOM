@@ -1,0 +1,247 @@
+
+*** INDICE ***
+
+	DOM-------
+		LISTENER: 						32
+		PARENTNODE: 					49
+		CHILDNODE: 						67
+		NODE: 							86
+		DOCUMENTO_NODE: 				114
+		ELEMENT: 						134
+
+	BOM-------
+		WINDOW:  						159
+			document 	
+			history
+			location 
+			navigator
+			screen
+			...
+		EVENTOS WINDOW:					222
+
+
+
+
+
+
+DOM
+
+
+-------------------------------------------------------------------------------------------------
+
+--	LISTENER 
+
+	var t = document.getElementById("t")
+
+	// Añade un manejador para un evento. add...(nombreEvento, Evento, )
+	t.addEventListener("click", modificarTexto, false)
+
+	// Eliminar un listener para un evento del elemento
+	t.removeEventListener(evento) 
+
+	// Dispara el evento del elemento que se indique 
+	t.dispatchEvent(evento)
+
+
+
+------------------------------------------------------------------------------------------------------
+
+-- PARENTNODE 
+
+	children() 					--> Devuelve la colección de nodos hijo
+	firstElementChild() 		--> Devuelve el primer nodo hijo 
+	lastElementChild() 			--> Devuelve el último nodo hijo 
+	childElementCount() 		--> Devuelve la cantidad de nodos hijo de tipo Element 
+
+	document.querySelector(tipo) 			--> Devuelve el primer elemento del tipo especificado
+	document.querySelectorAll(tipo) 		--> Devuelve todos los elementos del tipo especificado
+	document.getElementById(id) 			--> Devuelve el elemento de la id especificada
+	document.getElementsByName(name)
+	document.getElementsByClassName(clase) 	--> Devuelve el elemento que tenga una clase con ese nombre
+
+
+
+
+------------------------------------------------------------------------------------------------------
+
+-- CHILDNODE 
+
+	remove() 			--> Se puede borrar así mismo del padre 
+
+-- NODELIST 
+
+	item(index) 		--> Devuelve el elemento de la posición indicadsa de la lista 
+	length 			--> Devuelve el número de elementos en la lista 
+
+-- HTMLCollection 
+
+	length 			--> Devuelve el número de elementos en la colección 
+	item(index) 		--> Devuelve el elemento de la posición indicada de la colección 
+	namedItem(name) 	--> Devuelve el elemento con el id o name indicado
+
+
+
+-----------------------------------------------------------------------------------------------------
+
+--NODE 
+
+	nodeType() 			--> Devuelve el tipo de nodo  que es 
+	nodeName() 			--> Devuelve el nombre del nodo 
+	baseURI() 			--> Devuelve URL base del documento html 
+	ownerDocument() 	--> Devuelve el nodo <html> del al que pertenece 
+	parentNode() 		--> Devuelve el nodo padre 
+	parentElement() 	--> Devuelve el elemento padre 
+	hasChildNodes() 	--> Devuelve true si tiene nodos hijo 
+	childNodes() 		--> Devuelve la lista de nodos hijo 
+	firstChild() 		--> Devuelve el primer nodo hijo 
+	lastChild() 		--> Devuelve el último nodo hijo 
+	previousSibling() 	--> Devuelve el nodo hermano inmediatamente anterior 
+	nextSibling() 		--> Devuelve el nodo hermano inmediatamente siguiente 
+	nodeValue() 		--> Devuelve/Establece el valor del nodo 
+	textContent() 		--> Devuelve/Establece el contenido de texto del nodo y descendientes 
+	cloneNode(boolean) 	--> Devuelve una copia del nodo, si recibe true, el subárbol completo
+	isEqualNode(node) 	--> Devuelve true si el nodo que se pasa es igual 
+	contains(node) 		--> Devuelve true si el nodo que se le pasa es descendiente
+	appendChild(node) 	--> Añade el nodo node como último hijo a la lista de hijos
+	insertBefore(node, node)	--> Inserta el nodo node delante del nodo hijo child 
+	replaceChild(node,child) 	--> Sustituye el nodo hijo por el nuevo nodo node 
+	removeChild(child) 			--> Elimina el nodo hijo child 
+
+
+
+-----------------------------------------------------------------------------------------------------------
+
+--DOCUMENT_NODE
+
+	URL() 							--> Devuelve la URL del documento 
+	documentURI() 					--> Devuelve la URL del documento 
+	characterSet() 					--> Devuelve la codificación del documento 
+	documentElement() 				--> Devuelve el elemento raís del documento 
+	createElement(nombre)			--> Crea el elemento HTML nombre 
+	createTextNode(datos)			--> Crea un nodo tipo texto cuyo contenido es datos
+
+	importNode(nodo,boolean)		--> Crea una copia de un nodo desde un documento externo 
+	adoptNode(nodo) 				--> Adopta un nodo y su arbol de descendientes eliminandolo del documento en el que estuviese 
+
+	createEvent(tipoEvento) 		--> Crea un evento del tipo especificado 
+	getElementsByTagName(nombre)	--> Devuelve la lista de elementos HTML nombre 
+	getElementsByClassName(string)	--> Devuelve la lista de elementos con el nombre en atributo class 
+
+
+
+-------------------------------------------------------------------------------------------------------
+
+--ELEMENT 
+
+	tagName() 						--> Devuelve la etiqueta del elemento HTML 
+	id() 							--> Devuelve el valor del atributo id 
+	className() 					--> Devuelve el valor del atributo class 
+	classList() 					--> Devuelve la lista de valores del atributo class 
+	attributes () 					--> Devuelve la lista de atributos del elemento 
+	getAttribute(nombre) 			--> Devuelve el valor del atributo nombre del elemento 
+	setAttribute(nombre, valor)		--> Asigna el atributo nombre con el valor valor al elemento 
+	removeAttribute(nombre) 		--> Elimina el atributo nombre dle elemento 
+	hasAttribute(nombre)			--> Devuelve true si tiene elemento nombre 
+	getElementsByTagName(nombre) 	--> Devuelve la lista de elementos de tipo nombre descendientes 
+	getElementsByClassName(nombre)	--> Devuelve la lista de elementos con clase con ese nombre 
+
+
+
+
+
+
+
+
+BOM 
+
+-----------------------------------------------------------------------------------------------------
+
+--	WINDOW 
+
+	window.document() 					--> Devuelve el objeto DOM de la ventana 
+
+	window.history() 					--> Devuelve el historial de la ventana
+		
+		length()						--> Devuelve el número de URLs almacenadas en el historial
+
+		back()							--> Carga la URL previa en la lista del  historial 
+		forward() 						--> Carga la URL siguiente en la lista del historial
+		go(numero)						--> A la posición de la URL actual en el historial le suma el numero de posiciones indicado y carga la URL
+
+	window.location() + 
+
+		location.hash() 				--> Devuelve la parte del # de la URL 
+		location.search()				--> Devuelve la parte del ? de la URL 
+		location.host() 				--> Devuelve el nombre del host y el puerto de la URL 
+		location.hostname() 			--> Devuelve el nombre del host de la URL 
+		location.href() 				--> Devuelve la URL entera de la ventana
+		location.origin()				--> Devuelve el protocolo, nombre del host y puerto de la URL 
+		location.pathname() 			--> Devuelve lo que va a continuación del host de una URL 
+		location.assign(url)			--> Carga el nuevo documento indicado por la URL
+		location.reload()				--> Recarga el documento
+		location.replace() 				--> Carga el nuevo documento indicado por la URL. Elimina del historial la URL del documento actual 
+
+	window.navigator() +
+
+		navigator.appCodeName() 		--> Devuelve la cadena "Mozilla" (navegador)
+		navigator.appName() 			--> Devuelve una cadena con el nombre completo del navegador
+		navigator.appVersion()
+		navigator.platform() 			--> Devuelve una cadena vacía o una representando la plataforma en la que está corriendo el navegador
+		navigator.userAgent() 			--> Devuelve el valor de la cadena User-Agent en la petición HTTP, o cadena vacía si no se envía dicha cabecera
+
+	window.screen() + 
+
+	 	screen.height/width 			--> Devuelve el alto/ancho de la pantalla en px 
+	 	screen.availHeight/availWidth	--> Devuelve en px el alto/ancho disponible de pantalla, excluyendo barras de tareas del SO 
+
+
+	 window.open(url, target, parametros)--> Abre una nueva ventana del navegador. Parametros opcionales
+	 		url - url que va a abrir
+	 		target - valor del atributo target o el nombre del objeto window que se crea 
+	 		parametros - especificar height o width 
+
+	 window.close()
+	 window.focus()
+	 window.blur() -> elimina el foco de la ventana 
+	 window.stop() -> detiene la carga del documento 
+	 ---------------
+	 window.alert(mensaje)
+	 window.confirm(mensaje)
+	 window.prompt(mensaje, respuesta)
+	 ---------------
+	 window.scroll(x,y), scrollTo(x,y) -> situa la posicion de scroll del documento ene l valor horizontal y vertical indicado por x e y 
+	 window.moveBy(x,y)	 -> mueve la ventana x px a la derecha e y px a la izquierda
+	 window.moveTo(x,y)	 -> mueve la ventana a la posicion x y 
+	 resizeBy(x, y)	  	 -> redimensiona la ventana sumandox pixeles de ancho e y pixeles de alto
+	 resizeTo(x,y)		 -> redimensiona la ventana a x pixeles de ancho e y pixeles de alto 
+
+
+
+---------------------------------------------------------------------------------------------------------------
+
+-- EVENTOS WINDOW 
+
+	onblur() 			--> Se dispara tras perder la ventana el foco 
+	onfocus() 			--> Se dispara cuando la ventana recibe el foco 
+	onclick() 			--> Se dispara al pulsar y soltar en cualquier botón del ratón 
+	ondbclick() 		--> Se dispara al hacer doble click
+	onclose() 			--> Se dispara tras cerrar la ventana 
+	onload() 			--> Se dispara tras cargar completamente todos los recursos y el DOM. No se dispara si la carga viene de la caché 
+	onkeypress()		--> Se dispara al pulsar una tegla (excepto shift, fn y capslock)
+	onkeyup() 			--> Se dispara al soltar una tecla pulsada 
+	onmousedown()		--> Se dispara cuando se pulsa un boton 
+	onmouseup()			--> Se dispara cuando se suelta el boton del ratón 
+	onmousemove()		--> Se dispara cuando el ratón se mueve dentro de la ventana 
+	onmouseout()		--> Se dispara cuando el ratón deja la ventana 
+	onmouseenter()		--> Se dispara cuando el ratón entra en la entana procedente del exterior 
+	onmouseover()		--> Se dipara cuando el ratón entra en la ventana, ya sea procedente del exterior o de otro elemento interior
+	oncontextmenu()		--> Se dispara cuando se pulsa el botón derecho del ratón
+	onreset()			--> Se dispara cuando se hace reset en un formulario 
+	onsubmit()			--> Se dispara cuando se envía un formulario 
+	onresize() 			--> Se dispara cuando se cambia el tamaño de la ventana 
+	onscroll() 			--> Se dispara cuando se hace scroll en la ventana 
+	onwheel()			--> Se dispara cuando se mueve la rueda del ratón 
+	onstorage()			--> Se dispara cuando se produce un cambio en el sessionStorage o localStorage
+
+
+

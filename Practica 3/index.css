@@ -1,0 +1,138 @@
+body {
+	padding: 5% 15%;
+	background: #eee;
+	min-width: 480px;
+	margin: 0;
+}
+
+	body>main {
+		background: #fff;
+	}
+
+	body>footer {
+		display: flex;
+		justify-content: space-around;
+		background: #8DF;
+		padding: .5em;
+		margin-top: 1em;
+	}
+
+/*--------------------------------------------------------------------------*/
+
+header {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	overflow: hidden;
+	background: #8DF;
+}
+
+	header>img {
+		height: 30%;
+		width: 30%;
+		border: 2px solid black;
+		border-radius: 4em;
+		margin-top: 1em;
+		padding:1em;
+		background: #fff;
+	}
+
+/*--------------------------------------------------------------------------*/
+
+main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	padding: 1em;
+	margin-top: 1em;
+	padding-bottom: 2em;
+}
+
+	main>div {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+	}
+
+		main>div>footer>div, main>div>input {
+			margin-top: 1em;
+		}
+
+		#marcador, #marcador>label {
+			padding: .5em;
+			text-align: left;
+		}
+
+		output {
+			text-align: right;
+		}
+
+			#marcador{
+				border: 4px dotted #56CCFE;
+				flex-direction: column;
+			}
+
+		#botones {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-around;
+		}
+		
+canvas {
+	border: 2px solid black;
+}
+
+
+/* Estas son las clases que se añaden cuando estamos usando el 
+DRAG & DROP exactamente en el Ondragenter y Ondragleave*/
+.arrastrando, 
+.seleccionable:hover {
+	cursor:pointer;
+	background-color: #bff;
+	border-color: #f00;
+}
+
+
+
+
+
+
+/*--------------------------------------------------------------------------*/
+
+
+
+
+/*MEDIA QUERYYYYYYYYYYYYYYYYYYYYYYYYYYS*/
+
+
+@media all and (min-width: 1200px) {
+	
+	header {
+		flex-direction: row;
+		justify-content: space-around;
+	}
+
+		header>img {
+				height: 10%;
+				width: 10%;
+				border: 2px solid black;
+				border-radius: 2em;
+				margin: 1em;
+				padding: 1em;
+				background: #fff;
+			}
+
+	main {
+		flex-direction: row;
+		justify-content: space-around;
+		align-items: initial;
+	}
+
+		main>div>input {
+			margin-top: 1.5em;
+		}
+
+}
